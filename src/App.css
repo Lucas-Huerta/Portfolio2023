@@ -22,9 +22,18 @@ nav ul{
   justify-content: flex-start;
 }
 
+.Section-ThreeJs{
+  height: 50%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 10;
+}
+
 .Section-Title{
   display: flex;
-  height: 100%; 
+  height: 50%; 
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;

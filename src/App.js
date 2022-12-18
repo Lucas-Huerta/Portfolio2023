@@ -1,4 +1,5 @@
 import './App.css';
+import ThreeJs from './components/ThreetTest';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </li>
           </ul>
         </nav>
+        <section className='Section-ThreeJs'>
+          <ThreeJs />
+        </section>
         <section className="Section-Title">
           <h1>
             LUCAS
