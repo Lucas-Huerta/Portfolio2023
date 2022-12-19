@@ -24,11 +24,15 @@ nav ul{
 
 .Section-ThreeJs{
   height: 50%;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   z-index: 10;
+}
+
+#canvas-container{
+  width: 40%;
 }
 
 .Section-Title{
@@ -57,4 +61,27 @@ nav ul{
 /* Huerta */
 .Section-Title h1:last-of-type{
   font-size: 9em;
+}
+
+#main-Wrapper{
+  margin-top: 5vh;
+  width: 100%;
+  height: 200vh;
+}
+
+#main-Wrapper h2{
+  text-align: center;
+  font-size: 4em;
+  margin: 0;
+}
+
+#main-Wrapper .mainProjects{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#main-Wrapper .mainProjects img{
+  width: 20%;
+  height: auto;
 }

@@ -1,35 +1,24 @@
 import './App.css';
-import ThreeJs from './components/ThreetTest';
+import Navbar from './components/Navigation/Navbar';
+import SphereThree from './components/SphereThree';
+import Wrapper from './components/Main/Wrapper';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <nav>
-          <ul>
-            <li>
-              Home
-            </li>
-            <li>
-              Projects
-            </li>
-            <li>
-              About
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
         <section className='Section-ThreeJs'>
-          <ThreeJs />
+          <SphereThree />
         </section>
         <section className="Section-Title">
-          <h1>
-            LUCAS
-          </h1>
-          <h1>
-            HUERTA
-          </h1>
+          <h1>LUCAS</h1>
+          <h1>HUERTA</h1>
         </section>
       </header>
+      <main>
+        <Wrapper />
+      </main>
     </div>
   );
 }
