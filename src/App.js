@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navigation/Navbar';
 import SphereThree from './components/SphereThree';
 import Wrapper from './components/Main/Wrapper';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       <main>
         <Wrapper />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
