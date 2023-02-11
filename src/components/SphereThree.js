@@ -66,7 +66,7 @@ const MyRotatingSphere = () => {
 
   return (
     <mesh scale={6}>
-        <sphereBufferGeometry args={[0.4, 100.1, 1000, 700]} />
+        <sphereBufferGeometry args={[0.45, 100.1, 1000, 700]} />
         {/* <planeBufferGeometry args={[0.4, 0.6, 16, 16]} /> */}
         <waveShaderMaterial ref={myMesh} uTexture={image} uColor={"white"} />
         {/* <boxGeometry />
