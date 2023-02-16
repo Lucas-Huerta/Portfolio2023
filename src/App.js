@@ -1,4 +1,5 @@
 import './App.css';
+import './locomotive-scroll.css'
 import Navbar from './components/Navigation/Navbar';
 import SphereThree from './components/SphereThree';
 import Wrapper from './components/Main/Wrapper';

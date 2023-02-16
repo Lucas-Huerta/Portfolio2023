@@ -1,62 +1,34 @@
-import gsap from "gsap"
 import React, { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/all"
-import { ScrollToPlugin } from "gsap/all"
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); 
+import locomotiveScroll from "locomotive-scroll";
 
 export default function Wrapper() {
     const myElementRef = useRef(null);
     const titleRef = useRef(null);
 
+    const scrollRef = React.createRef();
+
     useEffect(() => {
+        /**
+         * Définition du scroll locomotive
+         */
+        const scroll = new locomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            repeat: true
+        });
+
+        const el = scrollRef.current;
+        el.style.opacity = "1";
+
         const myElement = myElementRef.current;
         const titleMyElement = titleRef.current
-
-        function first() {
-            var tl = gsap.timeline();
-            tl.from(".square1", 
-            { 
-                y: "-500%", ease: "power1.inOut", opacity: 0, yoyo: true
-            }, 0)
-            .to(".square1", 
-            { 
-                y: "50%", ease: "power1.inOut", opacity: 1, yoyo: true
-            }, 0)
-            return tl;
-        }
-        
-        function second() {
-            var tl = gsap.timeline();
-            tl.from(".square2", 
-            { 
-                y: "-500%", ease: "power1.inOut", opacity: 0, yoyo: true
-            }, 0)
-            .to(".square2", 
-            { 
-                y: "150%", ease: "power1.inOut", opacity: 1, yoyo: true
-            }, 0)
-            return tl;
-        }
-        
-        function third() {
-            var tl = gsap.timeline();
-            tl.from(".square3", 
-            { 
-                y: "-500%", ease: "power1.inOut", opacity: 0, yoyo: true
-            }, 0)
-            .to(".square3", 
-            { 
-                y: "200%", ease: "power1.inOut", opacity: 1, yoyo: true
-            }, 0)
-            return tl;
-        }
     
         function handleScroll() {
 
             const windowHeight = window.innerHeight;
             const elementTop = myElement.getBoundingClientRect().top + windowHeight;
 
+            // Ajout ou non de la propriété sticky au titre lors du scroll
             if(elementTop >= windowHeight){
                 titleMyElement.style.position = 'inherit';
             }
@@ -65,31 +37,8 @@ export default function Wrapper() {
                 titleMyElement.style.top = "2px";
                 titleMyElement.style.left = "25%";
                 titleMyElement.style.right = "25%";
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        pin: true, 
-                        scrub: 1,
-                        // pinType: "fixed",
-                        trigger: ".mainProjects",
-                        start: "bottom center",
-                        end: "bottom bottom",
-                        // onEnter: ({progress, direction, isActive}) => {
-                        //     console.log(progress, direction, isActive);
-                        //     // let main = document.getElementsByClassName('.mainProject');
-                        //     // main.classList.add('fixed');
-                        // },
-                        markers: true,
-                        // snap: 0.1
-                    }
-                });
-                tl.add(first(), "+=2")
-                    .add(second(), "+=3")     //with a gap of 2 seconds
-                    .add(third(), "+=4") //overlap by 1 second
-
-                return tl;
             }
         }
-    
         window.addEventListener('scroll', handleScroll);
     
         return () => {
@@ -98,14 +47,30 @@ export default function Wrapper() {
       }, []);
 
       return (
-        <section id='main-Wrapper' ref={myElementRef} className="wrapper">
+        <section id='main-Wrapper' ref={myElementRef} className="wrapper" data-scroll-section>
             <h2 ref={titleRef}>
                 Projects
             </h2>
-            <div className="mainProjects">
-                <img src="gradient.jpeg" alt="img Projet" id="img1" className="square square1"/>
-                <img src="gradient.jpeg" alt="img Projet" id="img2" className="square square2"/>
-                <img src="gradient.jpeg" alt="img Projet" id="img3" className="square square3"/>
+            <div className="mainProjects " >
+                <div className="scroll" ref={scrollRef}>
+                    <img src="gradient.jpeg" alt="img Projet" id="img1"
+                        data-scroll
+                        data-scroll-speed="2"
+                        data-scroll-position="bottom"
+                        data-scroll-direction="vertical"
+                    />
+                    <img src="gradient.jpeg" alt="img Projet" id="img2"
+                     data-scroll
+                     data-scroll-speed="2"
+                     data-scroll-position="bottom"
+                     data-scroll-direction="vertical"
+                     />
+                    <img src="gradient.jpeg" alt="img Projet" id="img3"
+                     data-scroll
+                     data-scroll-speed="2"
+                     data-scroll-position="bottom"
+                     data-scroll-direction="vertical" />
+                </div>
             </div>
         </section>
       );

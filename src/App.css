@@ -76,14 +76,19 @@ nav ul{
 }
 
 #main-Wrapper .mainProjects{
-  display: flex;
+  height: 100%;
+}
+
+.scroll{
+  height: 100%;
+   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-#main-Wrapper .mainProjects img{
+#main-Wrapper .mainProjects .scroll img{
   width: 20%;
-  height: auto;
+  height: 20vh;
 }
 
 #main-Footer{
