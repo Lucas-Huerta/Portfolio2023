@@ -81,14 +81,21 @@ nav ul{
 
 .scroll{
   height: 100%;
-   display: flex;
+  display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 7vw;
   justify-content: space-around;
 }
 
 #main-Wrapper .mainProjects .scroll img{
-  width: 20%;
-  height: 20vh;
+  width: 30%;
+  height: 30vh;
+  margin: 0 4vw;
+}
+
+#main-Wrapper .mainProjects .scroll img:nth-child(2n+1){
+  margin: 60vh 4vw;
 }
 
 #main-Footer{

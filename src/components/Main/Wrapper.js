@@ -51,7 +51,7 @@ export default function Wrapper() {
             <h2 ref={titleRef}>
                 Projects
             </h2>
-            <div className="mainProjects " >
+            <div className="mainProjects" >
                 <div className="scroll" ref={scrollRef}>
                     <img src="gradient.jpeg" alt="img Projet" id="img1"
                         data-scroll
@@ -69,7 +69,26 @@ export default function Wrapper() {
                      data-scroll
                      data-scroll-speed="2"
                      data-scroll-position="bottom"
-                     data-scroll-direction="vertical" />
+                     data-scroll-direction="vertical"
+                     />
+                    <img src="gradient.jpeg" alt="img Projet" id="img3"
+                     data-scroll
+                     data-scroll-speed="2"
+                     data-scroll-position="bottom"
+                     data-scroll-direction="vertical" 
+                     />
+                    <img src="gradient.jpeg" alt="img Projet" id="img3"
+                     data-scroll
+                     data-scroll-speed="2"
+                     data-scroll-position="bottom"
+                     data-scroll-direction="vertical" 
+                     />
+                    <img src="gradient.jpeg" alt="img Projet" id="img3"
+                     data-scroll
+                     data-scroll-speed="2"
+                     data-scroll-position="bottom"
+                     data-scroll-direction="vertical" 
+                     />
                 </div>
             </div>
         </section>
